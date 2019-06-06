@@ -1,0 +1,33 @@
+resteasy:
+  jaxrs:
+    app:
+      registration: property
+      classes: com.example.blog.RESTEasyHelloWorldApplication
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - shutdown
+  endpoint:
+    shutdown:
+      enabled: true
+spring:
+  datasource:
+    url: jdbc:sqlserver://${sqlserver.url};instanceName=${sqlserver.instance};databaseName=${sqlserver.db.name}
+    username: ${sqlserver.db.username}
+    password: ${sqlserver.db.password}
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+logging:
+  level:
+    org:
+      springframework: info
+      jdbc:
+        datasource:
+          DataSourceTransactionManager: DEBUG
+      jetbrains:
+        exposed:
+          SpringTransactionManager: DEBUG
+
