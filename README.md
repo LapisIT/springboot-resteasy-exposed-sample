@@ -8,5 +8,6 @@ Build using maven through IDE.
 
 ## Running.
 In project base directory, run the command below replacing the placeholder values with your environment sql server
+
 java -Dsqlserver.url={sqlserver host} -Dsqlserver.instance={sqlserver instance} -Dsqlserver.db.name={sqlserver dbname} -Dsqlserver.db.username={sqlserver username} -Dsqlserver.db.password={sqlserver password} -jar .\target\blog-0.0.1-SNAPSHOT.jar
 
